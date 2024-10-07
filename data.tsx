@@ -3,39 +3,23 @@
 
 export const projects = [
   {
-    title: "Richard Gaston",
+    title: "Consology",
     img: "/images/img.png",
   },
   {
-    title: "KangHee Kim",
+    title: "PrymaStudio",
     img: "/images/img2.png",
   },
   {
-    title: "Richard Gaston",
+    title: "At-Taasil",
     img: "/images/img.png",
   },
   {
-    title: "KangHee Kim",
+    title: "SunnahHive",
     img: "/images/img2.png",
   },
-  // {
-  //   title: "Inka and Niclas",
-  //   img: img,
-  // },
-  // {
-  //   title: "Arch McLeish",
-  //   img: img,
-  // },
-  // {
-  //   title: "Nadir Bucan",
-  //   img: img,
-  // },
-  // {
-  //   title: "Chandler Bondurant",
-  //   img: img,
-  // },
-  // {
-  //   title: "Arianna Lago",
-  //   img: img,
-  // },
+  {
+    title: "LearnSmart",
+    img: "/images/img2.png",
+  },
 ];
