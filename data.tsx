@@ -4,7 +4,7 @@
 export const projects = [
   {
     title: "Consology",
-    img: "/images/img.png",
+    img: "/images/consology.png",
   },
   {
     title: "PrymaStudio",
