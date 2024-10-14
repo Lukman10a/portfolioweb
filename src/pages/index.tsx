@@ -1,4 +1,4 @@
-import Scene from "@/components/ProjectSection/scene";
+import Scene from "@/components/scene";
 
 export default function Home() {
   return (
