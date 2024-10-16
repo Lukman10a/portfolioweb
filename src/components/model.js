@@ -1,7 +1,7 @@
 import { motion } from "framer-motion-3d";
 import React, { useEffect } from "react";
 import { useRef } from "react";
-import { animate, progress, useMotionValue, useTransform } from "framer-motion";
+import { animate, useMotionValue, useTransform } from "framer-motion";
 import useDimension from "./useDimension";
 import useMouse from "./useMouse";
 import { useFrame, useThree } from "@react-three/fiber";

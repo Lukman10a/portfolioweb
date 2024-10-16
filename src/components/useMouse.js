@@ -1,6 +1,5 @@
-import { useMotion } from "@react-three/drei";
 import { useMotionValue } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function useMouse() {
   const mouse = {
