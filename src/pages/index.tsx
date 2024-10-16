@@ -1,5 +1,5 @@
 import Scene from "@/components/scene";
-import Projects from "@/components/Projects";
+import Projects from "@/components/projects";
 import { useEffect, useState } from "react";
 import Lenis from "lenis";
 
