@@ -115,12 +115,18 @@ export default function Model({ activeMenu }) {
 
   // Ensure textures are loaded
   const isLoaded = textures.every((texture) => texture && texture.image);
+
+  // Set default values in case textures aren't loaded yet
+  const defaultWidth = 100;
+  const defaultHeight = 100;
   const defaultScale = 0.225;
 
-  // Handle scale based on loaded texture's dimensions
-  const scale = isLoaded
-    ? useAspect(textures[0].image.width, textures[0].image.height, defaultScale)
-    : defaultScale; // Fallback scale if textures aren't loaded yet
+  // Always call useAspect, and provide fallback dimensions if textures aren't loaded yet
+  const scale = useAspect(
+    isLoaded ? textures[0].image.width : defaultWidth,
+    isLoaded ? textures[0].image.height : defaultHeight,
+    defaultScale
+  );
 
   // Smooth mouse position
   const smoothMouse = {
