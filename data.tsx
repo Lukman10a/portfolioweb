@@ -1,6 +1,3 @@
-// import img from "./public/images/img.png";
-// import img2 from "./public/images/img2.png";
-
 export const projects = [
   {
     title: "Consology",
@@ -16,7 +13,7 @@ export const projects = [
   },
   {
     title: "SunnahHive",
-    img: "/images/img2.png",
+    img: "/images/consology.png",
   },
   {
     title: "LearnSmart",

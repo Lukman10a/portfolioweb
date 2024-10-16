@@ -1,19 +1,27 @@
 import { motion } from "framer-motion-3d";
+import React, { useEffect } from "react";
 import { useRef } from "react";
-import { useMotionValue, useTransform } from "framer-motion";
+import { animate, progress, useMotionValue, useTransform } from "framer-motion";
 import useDimension from "./useDimension";
 import useMouse from "./useMouse";
 import { useFrame, useThree } from "@react-three/fiber";
 import { fragment, vertex } from "./shader";
-import { useTexture } from "@react-three/drei";
+import { useAspect, useTexture } from "@react-three/drei";
+import { projects } from "../../data";
 
-export default function Model() {
+export default function Model({ activeMenu }) {
   const mesh = useRef();
   const dimension = useDimension();
   const mouse = useMouse();
   const { viewport } = useThree();
+  const textures = projects.map((project) => useTexture(project.img));
+  const opacity = useMotionValue(0);
 
-  const texture = useTexture("/images/img2.png");
+  const scale = useAspect(
+    textures[0].image.width,
+    textures[0].image.height,
+    0.225
+  );
 
   // Smooth mouse position
   const smoothMouse = {
@@ -22,9 +30,26 @@ export default function Model() {
   };
 
   const uniforms = useRef({
-    uTexture: { value: texture },
+    uTexture: { value: textures[0] },
     uDelta: { value: { x: 0, y: 0 } },
+    uOpacity: { value: 1 },
   });
+
+  useEffect(() => {
+    if (activeMenu != null) {
+      animate(opacity, 1, {
+        duration: 0.2,
+        onUpdate: (progress) =>
+          (mesh.current.material.uniforms.uOpacity.value = progress),
+      });
+      mesh.current.material.uniforms.uTexture.value = textures[activeMenu];
+    } else
+      animate(opacity, 0, {
+        duration: 0.2,
+        onUpdate: (progress) =>
+          (mesh.current.material.uniforms.uOpacity.value = progress),
+      });
+  }, [activeMenu]);
 
   const lerp = (x, y, a) => x * (1 - a) + y * a;
 
@@ -36,7 +61,7 @@ export default function Model() {
     smoothMouse.y.set(lerp(smoothMouse.y.get(), y.get(), 0.1));
     mesh.current.material.uniforms.uDelta.value = {
       x: x.get() - smoothx,
-      y: y.get() - smoothy,
+      y: -1 * (y.get() - smoothy),
     };
   });
 
@@ -52,13 +77,13 @@ export default function Model() {
   );
 
   return (
-    <motion.mesh ref={mesh} position-x={x} position-y={y}>
-      <planeGeometry args={[2, 3, 12, 12]} />
-      {/* <motion.meshBasicMaterial wireframe color={"blue"} /> */}
+    <motion.mesh scale={scale} ref={mesh} position-x={x} position-y={y}>
+      <planeGeometry args={[1, 2, 12, 12]} />
       <shaderMaterial
         fragmentShader={fragment}
         vertexShader={vertex}
         uniforms={uniforms.current}
+        transparent
       />
     </motion.mesh>
   );
