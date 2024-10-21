@@ -1,7 +1,9 @@
-import Scene from "@/components/scene";
-import Projects from "@/components/projects";
+import Scene from "@/components/projects/scene";
+import Projects from "@/components/projects/projects";
 import { useEffect, useState } from "react";
 import Lenis from "lenis";
+import About from "@/components/about";
+import ClipElement from "@/components/about/clipElement";
 
 export default function Home() {
   useEffect(() => {
@@ -18,6 +20,13 @@ export default function Home() {
 
   return (
     <main>
+      <ClipElement bottomBg="bg-pryma-forest500" topbg="bg-pryma-ivory" />
+      <About />
+      <ClipElement
+        containerBg="bg-pryma-ivory"
+        bottomBg="bg-pryma-forest500"
+        topbg="bg-pryma-main"
+      />
       <Scene activeMenu={activeMenu} />
       <div className="h-[50vh]"></div>
       <Projects setActiveMenu={setActiveMenu} />

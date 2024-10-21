@@ -98,7 +98,7 @@ import useMouse from "./useMouse";
 import { useFrame, useThree } from "@react-three/fiber";
 import { fragment, vertex } from "./shader";
 import { useAspect, useTexture } from "@react-three/drei";
-import { projects } from "../../data";
+import { projects } from "../../../data";
 
 export default function Model({ activeMenu }) {
   const mesh = useRef();

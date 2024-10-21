@@ -1,0 +1,15 @@
+.section_transition_light_dark_lower_block {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(6deg) skew(0deg);
+  transform-style: preserve-3d;
+}
+
+.section_transition_light_dark_higher_block {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(-6deg) skew(0deg);
+  transform-style: preserve-3d;
+}
+.verticalText {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+}
