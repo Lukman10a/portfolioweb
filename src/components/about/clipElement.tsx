@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import styles from "././styles.module.css";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ClipElement = ({
   containerBg = "bg-pryma-main",
@@ -14,20 +14,6 @@ const ClipElement = ({
   bottomBg?: string;
 }) => {
   const ref = useRef(null);
-  const inView = useInView(ref);
-
-  const animationVariant = {
-    visible: {
-      scaleY: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeInOut",
-      },
-    },
-    hidden: {
-      scaleY: 0,
-    },
-  };
 
   return (
     <section

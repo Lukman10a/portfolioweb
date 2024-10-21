@@ -24,7 +24,7 @@ const About = () => {
           {/* About Text Section with Fade and Slide Animation */}
           <div className="space-y-8 animate-fadeInUp">
             <h4 className="w-4/5 font-montserrat text-3xl text-pryma-main animate-scaleIn">
-              Building Web & Mobile Excellence with{" "}
+              Building Web & Mobile Apps{" "}
               <span className="text-[#88a09d]">Precision & Passion</span>
             </h4>
             <div className="max-w-3xl space-y-3 text-2xl font-light md:text-lg animate-fadeInUp delay-300">
@@ -38,7 +38,7 @@ const About = () => {
               <p>
                 Whether building pixel-perfect interfaces for mobile or
                 developing dynamic web apps, I am passionate about delivering
-                seamless user experiences. I'm dedicated to writing clean,
+                seamless user experiences. I am dedicated to writing clean,
                 maintainable code and thrive in Agile environments, where
                 collaboration and innovation drive success.
               </p>
