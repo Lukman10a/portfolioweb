@@ -28,9 +28,9 @@ export default function Home() {
         topbg="bg-pryma-main"
       />
       <Scene activeMenu={activeMenu} />
-      <div className="h-[50vh]"></div>
-      <Projects setActiveMenu={setActiveMenu} />
-      <div className="h-[50vh]"></div>
+      <div className="p-10">
+        <Projects setActiveMenu={setActiveMenu} />
+      </div>
     </main>
   );
 }

@@ -18,7 +18,7 @@ const About = () => {
         <div className="flex items-center gap-14 lg:flex-col md:gap-11">
           {/* Large Letter 'A' with a Rotating Animation */}
           <p className="font-montserrat text-[400px] lg:text-[300px] md:text-[200px] animate-rotateIn [-webkit-text-fill-color:transparent] [-webkit-text-stroke:2px_#1a1f1e]">
-            A
+            L
           </p>
 
           {/* About Text Section with Fade and Slide Animation */}
@@ -48,7 +48,6 @@ const About = () => {
       </div>
 
       {/* Floating Animation */}
-      <div className="absolute bottom-[-50px] right-[-50px] w-64 h-64 bg-pryma-accent rounded-full animate-float"></div>
     </section>
   );
 };
